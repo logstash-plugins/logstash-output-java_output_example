@@ -8,7 +8,7 @@ apply plugin: 'maven'
 apply plugin: "distribution"
 
 group 'org.logstash.javaapi'
-version "${new File("/home/dan/dev/plugins/logstash-output-java_output_example/VERSION").text.trim()}"
+version "${new File("VERSION").text.trim()}"
 
 description = "Example Java filter implementation"
 
@@ -49,9 +49,6 @@ dependencies {
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.9.5"
     compile fileTree(dir: LOGSTASH_CORE_PATH, include: "**/logstash-core-?.?.?.jar")
 
-    //testCompile "com.fasterxml.jackson.core:jackson-core:2.9.5"
-    //testCompile "com.fasterxml.jackson.core:jackson-databind:2.9.5"
-    //testCompile "com.fasterxml.jackson.core:jackson-annotations:2.9.5"
     testCompile 'junit:junit:4.12'
     testCompile 'org.jruby:jruby-complete:9.1.13.0'
 }
