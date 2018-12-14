@@ -22,7 +22,7 @@ public class JavaOutputExample implements Output {
     public static final PluginConfigSpec<String> PREFIX_CONFIG =
             Configuration.stringSetting("prefix", "");
 
-    private String prefix = PREFIX_CONFIG.defaultValue();
+    private String prefix;
     private PrintStream printer;
     private final CountDownLatch done = new CountDownLatch(1);
     private volatile boolean stopped = false;
@@ -34,16 +34,7 @@ public class JavaOutputExample implements Output {
 
     JavaOutputExample(final Configuration config, final Context context, OutputStream targetStream) {
         // constructors should validate configuration options
-        if (config.contains(PREFIX_CONFIG)) {
-            Object o = config.get(PREFIX_CONFIG);
-            if (o instanceof String) {
-                this.prefix = (String)o;
-            } else {
-                throw new IllegalStateException(
-                        String.format("Invalid value '%s' for config option %s", o, PREFIX_CONFIG));
-            }
-        }
-
+        prefix = config.get(PREFIX_CONFIG);
         printer = new PrintStream(targetStream);
     }
 
