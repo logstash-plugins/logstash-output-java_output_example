@@ -3,8 +3,8 @@ package org.logstash.javaapi;
 import co.elastic.logstash.api.Configuration;
 import co.elastic.logstash.api.Context;
 import co.elastic.logstash.api.LogstashPlugin;
-import co.elastic.logstash.api.Output;
 import co.elastic.logstash.api.PluginConfigSpec;
+import co.elastic.logstash.api.v0.Output;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.logstash.Event;
 
