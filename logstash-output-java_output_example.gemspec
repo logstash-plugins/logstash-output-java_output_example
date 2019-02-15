@@ -1,6 +1,8 @@
+PLUGIN_VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__), "VERSION"))).strip unless defined?(PLUGIN_VERSION)
+
 Gem::Specification.new do |s|
   s.name            = 'logstash-output-java_output_example'
-  s.version         = '0.0.1'
+  s.version         = PLUGIN_VERSION
   s.licenses        = ['Apache-2.0']
   s.summary         = "Example output using Java plugin API"
   s.description     = ""

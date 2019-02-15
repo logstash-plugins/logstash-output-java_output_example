@@ -320,6 +320,33 @@ bin/logstash-plugin install --no-verify --local /path/to/javaPlugin.gem
 ```
 Substitute backslashes for forward slashes as appropriate in the command above for installation on Windows platforms. 
 
+### Running Logstash with the Java output plugin
+
+The following is a minimal Logstash configuration that can be used to test that the Java output plugin is correctly
+installed and functioning.
+```
+input {
+  generator { message => "Hello world!" count => 1 }
+}
+output {
+  java_output_example {}
+}
+```
+Copy the above Logstash configuration to a file such as `java_output.conf`. Logstash should then be started with:
+
+```
+bin/logstash --java-execution -f /path/to/java_output.conf
+```
+
+Note that the `--java-execution` flag to enable the Java execution engine is required as Java plugins are not supported
+in the Ruby execution engine.
+
+The expected Logstash output (excluding initialization) with the configuration above is:
+
+```
+{"@timestamp":"yyyy-MM-ddTHH:mm:ss.SSSZ","message":"Hello world!","@version":"1","host":"<yourHostname>","sequence":0}
+```
+
 ### Feedback
 
 If you have any feedback on Java plugin support in Logstash, please comment on our 
