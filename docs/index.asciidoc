@@ -1,5 +1,5 @@
 :plugin: example
-:type: input
+:type: output
 :default_codec: plain
 // Update header with plugin name and default codec
 
@@ -16,11 +16,9 @@ END - GENERATED VARIABLES, DO NOT EDIT!
 
 [id="plugins-{type}s-{plugin}"]
 
-=== Example input plugin
+=== Example output plugin
 
 include::{include_path}/plugin_header.asciidoc[]
-
-==== Description
 
 ==== Description
 
@@ -31,7 +29,7 @@ Add plugin description here
 // Sample link: <<plugins-{type}s-{plugin}-setting_name>>
 
 [id="plugins-{type}s-{plugin}-options"]
-==== Example Codec Configuration Options
+==== Example Output Configuration Options
 
 [cols="<,<,<",options="header",]
 |=======================================================================
