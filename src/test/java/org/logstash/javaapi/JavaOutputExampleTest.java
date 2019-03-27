@@ -1,9 +1,10 @@
 package org.logstash.javaapi;
 
 import co.elastic.logstash.api.Configuration;
+import co.elastic.logstash.api.Event;
 import org.junit.Assert;
 import org.junit.Test;
-import org.logstash.Event;
+import org.logstash.plugins.ConfigurationImpl;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -18,15 +19,15 @@ public class JavaOutputExampleTest {
         String prefix = "Prefix";
         Map<String, Object> configValues = new HashMap<>();
         configValues.put(JavaOutputExample.PREFIX_CONFIG.name(), prefix);
-        Configuration config = new Configuration(configValues);
+        Configuration config = new ConfigurationImpl(configValues);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        JavaOutputExample output = new JavaOutputExample(config, null, baos);
+        JavaOutputExample output = new JavaOutputExample("test-id", config, null, baos);
 
         String sourceField = "message";
         int eventCount = 5;
         Collection<Event> events = new ArrayList<>();
         for (int k = 0; k < eventCount; k++) {
-            Event e = new Event();
+            Event e = new org.logstash.Event();
             e.setField(sourceField, "message " + k);
             events.add(e);
         }
