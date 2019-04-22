@@ -1,10 +1,11 @@
-package org.logstash.javaapi;
+package org.logstashplugins;
 
 import co.elastic.logstash.api.Configuration;
 import co.elastic.logstash.api.Event;
 import org.junit.Assert;
 import org.junit.Test;
 import org.logstash.plugins.ConfigurationImpl;
+import org.logstashplugins.JavaOutputExample;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
