@@ -2,6 +2,7 @@ build
 bin
 *.idea
 *.iml
+lib/
 vendor/
 .bundle/
 build/
@@ -13,6 +14,7 @@ out/
 *.ipr
 *.iws
 *.gem
-Gemfile.lock
+*.gemspec
+Gemfile*
 settings.gradle
 gradle.properties
