@@ -1,6 +1,6 @@
 # Logstash Java Plugin
 
-[![Travis Build Status](https://travis-ci.org/logstash-plugins/logstash-output-java_output_example.svg)](https://travis-ci.org/logstash-plugins/logstash-output-java_output_example)
+[![Travis Build Status](https://travis-ci.com/logstash-plugins/logstash-output-java_output_example.svg)](https://travis-ci.com/logstash-plugins/logstash-output-java_output_example)
 
 This is a Java plugin for [Logstash](https://github.com/elastic/logstash).
 
