@@ -1,3 +1,9 @@
+## 1.0.2
+- Updates to improve compatibility with latest Logstash versions
+ - Update gradle version to enable JDK17 usage
+ - Fix reference to logstash-core.jar
+ - Update dependencies
+
 ## 1.0.1
 - Fix gradle incompatibility issue with Logstash 7.9 and above.
 
